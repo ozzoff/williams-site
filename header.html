@@ -1,0 +1,221 @@
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Krona+One&family=Orbitron:wght@400;500&family=Poppins:wght@400;500&display=swap');
+    :root{
+    --raisin-black: hsla(231, 10%, 14%, 1);
+  --roman-silver: hsla(229, 10%, 57%, 1);
+  --eerie-black: hsla(228, 9%, 10%, 1);
+  --black: hsla(0, 0%, 0%, 1);
+  --white: hsla(0, 0%, 100%, 1);
+  --white_a10: hsla(0, 0%, 100%, 0.1);
+  --white_a5: hsla(0, 0%, 100%, 0.05);
+  --blob-radius: 52% 48% 59% 41% / 53% 40% 60% 47%;
+}
+i{
+    font-size: 23px;
+}
+    *{
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+    scroll-behavior: smooth;
+    font-family: 'Syne', sans-serif;
+
+}
+    .header-logo img{
+    width: 100%;
+    max-width: 150px;
+
+}
+header{
+    padding: 1rem 15%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 40px;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1000000000;
+    transition: 0.5s;
+    
+
+}
+
+header.addbg{
+    background-color: var(--raisin-black);
+
+}
+
+
+.nav-bar{
+    background-color: var(--white);
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    right: 0px;
+    transform: translateX(350px);
+    width: 100%;
+    max-width: 340px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    transition: 0.5s;
+    position: fixed;
+    z-index: 10000;
+
+    
+    
+    
+    
+    
+
+}
+
+.nav-bar.active{
+    transform: translateX(0px);
+    
+}
+.nav-bar ul li{
+    margin-top: 35px;
+    margin-bottom: 35px;
+    
+}
+
+.nav-bar ul li a{
+    color: var(--eerie-black);
+    font-size: 16px;
+    font-weight: 500;
+    transition: 0.5s;
+    
+   
+}
+
+
+.nav-bar ul li a:hover{
+    font-weight: 600;
+    color: var(--black);
+}
+
+.nav-bar ul li .link-active{
+    font-weight: 600;
+    color: var(--black);
+}
+
+.nav-close{
+    position: absolute;
+    right: 10%;
+    top: 2%;
+    background-color: var(--black);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    
+    
+}
+
+.nav-close i{
+    color: var(--white);
+    
+
+}
+.hamburger{
+    background-color: var(--white);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.hamburger i{
+    color: var(--black);
+    position: absolute;top: 50%;
+    transform: translateY(-50%);
+}
+
+@media(max-width:960px){
+    header{
+        padding: 1rem 7%;
+    }
+}
+</style>
+
+
+
+
+<header>
+    <div class="header-logo">
+        <img src="img/logo.svg" alt="">
+    </div>
+    <nav class="nav-bar">
+        <ul>
+            <li> <a class="link-active" href="#home">Home</a> </li>
+            <li> <a href="#services">Services</a> </li>
+            <li> <a href="#skills">SKills</a> </li>
+            <li> <a href="#portfolio">Portfolio</a> </li>
+            <li> <a href="#blog">Blog</a> </li>
+            <li> <a href="about.html">About Me</a> </li>
+            <li> <a href="contact.html">Contact</a> </li>
+        </ul>
+
+        <div class="nav-close">
+            <i class='bx bx-x'></i>
+
+        </div>
+    </nav>
+    <div class="hamburger">
+        <i class='bx bx-menu'></i>
+    </div>
+</header>
+
+
+
+
+
+
+
+
+
+
+<script>
+    
+
+window.addEventListener("scroll",()=>{
+
+let i=window.scrollY
+
+if(i>=150){
+    document.querySelector("header").classList.add("addbg")
+}
+
+else{
+    document.querySelector("header").classList.remove("addbg")
+
+}
+
+})
+
+</script>
+
+
+<script>
+    document.querySelector(".hamburger").addEventListener("click", ()=>{
+    document.querySelector(".nav-bar").classList.add("active")
+})
+
+document.querySelector(".nav-close").addEventListener("click", ()=>{
+    document.querySelector(".nav-bar").classList.remove("active")
+})
+
+let cursordot=document.querySelector('.cursor-dot')
+let cursoroutline=document.querySelector(".cursor-outline")
+</script>
